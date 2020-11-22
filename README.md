@@ -1,6 +1,10 @@
 # Building (Docker)
 - docker build -t webapp:1.0.0 .
 
+# Push image to docker repo
+- docker login
+- docker image push <YourDockerID>/webapp:1.0.0
+
 # Running Service (Docker)
 - docker run -d --name webapp -p 8080:8080 webapp:1.0.0
 
@@ -15,6 +19,8 @@
 
 # Removing Service (Docker)
 - docker rm <container_id>
+
+## K8s ##
 
 # Deploy to K8s
 - kubectl apply -f deployment.yml

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: webapp:v1
+        image: webapp:1.0.0
         ports:
         - containerPort: 8080
         livenessProbe:
