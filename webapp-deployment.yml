@@ -15,5 +15,21 @@ spec:
       containers:
       - name: webapp
         image: webapp:1.0.0
+        livenessProbe:
+           httpGet:
+             path: /healthz
+             port: 8080
+             scheme: HTTP
+           initialDelaySeconds: 20
+           failureThreshold: 5
+           periodSeconds: 3
+        readinessProbe:
+           httpGet:
+             path: /healthz
+             port: 8080
+             scheme: HTTP
+           initialDelaySeconds: 20
+           failureThreshold: 5
+           periodSeconds: 10
         ports:
         - containerPort: 8080
